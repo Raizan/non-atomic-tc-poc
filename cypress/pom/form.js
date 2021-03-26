@@ -1,5 +1,7 @@
 export const PAGE_FILE_PATH = "./webpages/form.html";
 
+export const INVALID_VALIDATION_CLASS = "invalid-feedback";
+
 export default class Form {
   /**
    * @return {Cypress.Chainable}
