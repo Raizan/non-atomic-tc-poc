@@ -17,12 +17,10 @@ describe("Form Test", () => {
           // This case simulates a scenario in which
           // an event is triggered but doesn't inject the
           // error label to DOM
-          const validationLabel = elements.filter(
-            `.${INVALID_VALIDATION_CLASS}`
-          );
+          const validationLabel = elements.filter(INVALID_VALIDATION_CLASS);
           const errorName = "First name";
           expect(validationLabel, errorName).to.have.class(
-            INVALID_VALIDATION_CLASS
+            INVALID_VALIDATION_CLASS.replace(".", "")
           );
           expect(validationLabel, errorName).to.be.visible;
         } catch (err) {
@@ -36,9 +34,7 @@ describe("Form Test", () => {
           // Element exists in DOM, but has attribute "hidden"
           // This case simulates a scenario in which
           // hidden attribute is not deleted/toggled off
-          const validationLabel = elements.filter(
-            `.${INVALID_VALIDATION_CLASS}`
-          );
+          const validationLabel = elements.filter(INVALID_VALIDATION_CLASS);
           const errorName = "Last name";
           expect(validationLabel, errorName).to.be.visible;
         } catch (err) {
@@ -51,15 +47,13 @@ describe("Form Test", () => {
         try {
           // Element exists in DOM
           // This case works as expected
-          const validationLabel = elements.filter(
-            `.${INVALID_VALIDATION_CLASS}`
-          );
+          const validationLabel = elements.filter(INVALID_VALIDATION_CLASS);
           const errorName = "Username";
           // This existence check is unnecessary, but
           // it's here to show how it goes when validation
           // works as expected
           expect(validationLabel, errorName).to.have.class(
-            INVALID_VALIDATION_CLASS
+            INVALID_VALIDATION_CLASS.replace(".", "")
           );
           expect(validationLabel, errorName).to.be.visible;
         } catch (err) {
